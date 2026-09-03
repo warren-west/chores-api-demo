@@ -126,7 +126,7 @@ router.post("/", (req, res) => {
 
   chores.push(newChore);
 
-  res.status(201).json({ message: "Chore created successfully", data: newChore });
+  res.status(201).json({ message: "Chore created successfully", data: chores[nextId] });
 });
 
 // PUT /chores/:id - fully update an existing chore

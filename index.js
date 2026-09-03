@@ -1,5 +1,6 @@
 const express = require("express");
 const choresRouter = require("./routes/chores");
+const crashRouter = require("./routes/intentionalCrash");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,6 +20,7 @@ app.get("/health", (req, res) => {
 
 // Chores routes
 app.use("/chores", choresRouter);
+app.use("/crash", crashRouter);
 
 // 404 handler
 app.use((req, res) => {
