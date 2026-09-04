@@ -3,7 +3,6 @@ const choresRouter = require("./routes/chores");
 const crashRouter = require("./routes/intentionalCrash");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
@@ -27,6 +26,4 @@ app.use((req, res) => {
   res.status(404).json({ message: "Route not found" });
 });
 
-app.listen(PORT, () => {
-  console.log(`Chores API listening on http://localhost:${PORT}`);
-});
+module.exports = app
